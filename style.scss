@@ -1,0 +1,149 @@
+//variables
+$bg-color-main: rgb(110, 99, 99);
+$bg-color-content: rgba(1,1,1,0.3);
+$bg-color-btn-add: rgb(48, 160, 94);
+$bg-color-btn-delete: rgb(224, 21, 62);
+$bg-color-btn-delete-all: #EF3054;
+$border-color: rgb(0,0,0);
+$border-default: 2px solid $border-color;
+$border-input: 3px solid rgba(255,255,255,0);
+
+//main html
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'Comfortaa', cursive;
+}
+//content center
+body, .container, .todoLists{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+body{
+    max-width: 100vw;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1180' preserveAspectRatio='none' viewBox='0 0 1920 1180'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1005%26quot%3b)' fill='none'%3e%3crect width='1920' height='1180' x='0' y='0' fill='rgba(37%2c 68%2c 65%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c510 C 128%2c455.4 384%2c261.4 640%2c237 C 896%2c212.6 1024%2c382.6 1280%2c388 C 1536%2c393.4 1792%2c288.8 1920%2c264L1920 1180L0 1180z' fill='rgba(178%2c 176%2c 155%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c1032 C 96%2c1002 288%2c890.6 480%2c882 C 672%2c873.4 768%2c1003.6 960%2c989 C 1152%2c974.4 1248%2c780.2 1440%2c809 C 1632%2c837.8 1824%2c1068.2 1920%2c1133L1920 1180L0 1180z' fill='rgba(67%2c 170%2c 139%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1005'%3e%3crect width='1920' height='1180' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    @media screen and (max-width: 768px){
+        background-size: auto;
+    }
+}
+//style for all buttons
+button{
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+}
+.title{
+    cursor: default;
+}
+p{
+    cursor: pointer;
+}
+.title{
+    position: absolute;
+    top: 10vh;
+    color: #FF6F59;
+    font-size: 4vw;
+    font-weight: 800;
+    text-shadow: 2px 2px black;
+}
+.container{
+    width: 60%;
+    margin-top: 20vh;
+    background-color: $bg-color-content;
+    border: $border-default;
+    border-radius: 5px;
+    font-family: 'Comfortaa', cursive;
+
+    @media screen and (max-width: 768px){
+        width: 80%;
+    }
+}
+.myTodo{
+    width: 90%;
+}
+.inputvalue{
+    margin: 20px;
+    display: flex;
+    height: 35px;
+    input{
+        font-family: 'Comfortaa', cursive;
+        width: 80%;
+        &.inputVal{
+            color: black;
+            background-color: whitesmoke;
+            font-size: 20px;
+            border: $border-input;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+    }
+    button{
+        width: 20%;
+        height: 100%;
+        margin: 0;
+        background-color: $bg-color-btn-add;
+        border: $border-input;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        &:hover{
+            background-color: rgba($bg-color-btn-add, 0.8);
+        }
+    }
+}
+.todoLists{
+    display: block;
+    margin: 20px;
+}
+.todoList{
+    width: 80%;
+    display: flex;
+    margin: 20px auto;
+    p{
+        margin: 0;
+        padding-left: 3px;
+        padding-top: 10px;
+        width: 85%;
+        min-height: 25px;
+        font-size: 15px;
+        overflow-wrap: break-word;
+        background-color: rgba(255,255,255,0.7);
+        font-family: 'Comfortaa', cursive;
+        text-transform: uppercase;
+        &:hover{
+            text-decoration: line-through;
+        }
+    }
+    .taskDone{
+        text-decoration: line-through;
+    }
+    .deleteTask{
+        width: 15%;
+        height: 35px;
+        margin: 0;
+        font-size: 10px;
+        background-color: $bg-color-btn-delete;
+        border: $border-input;
+        &:hover{
+            background-color: rgba($bg-color-btn-delete, 0.8);
+        }
+        @media screen and (max-width: 768px){
+            font-size: 7px;
+        }
+    }
+}
+.clearTask{
+    display: grid;
+    place-content: center;
+    background-color: $bg-color-btn-delete-all;
+    border: $border-input;
+    color: white;
+    width: 50%;
+    height: 30px;
+    margin: 15px auto;
+    &:hover{
+        background-color: rgba($bg-color-btn-delete-all, 0.8);
+    }
+}
