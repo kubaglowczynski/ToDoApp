@@ -78,6 +78,9 @@ p{
             border: $border-input;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
+            @media screen and (max-width: 768px){
+                font-size: 15px;
+            }
         }
     }
     button{
@@ -101,6 +104,9 @@ p{
     width: 80%;
     display: flex;
     margin: 20px auto;
+    @media screen and (max-width: 768px){
+        width: 95%;
+    }
     p{
         margin: 0;
         padding-left: 3px;
@@ -112,6 +118,9 @@ p{
         background-color: rgba(255,255,255,0.7);
         font-family: 'Comfortaa', cursive;
         text-transform: uppercase;
+        @media screen and (max-width: 768px){
+            font-size: 10px;
+        }
     }
     .taskDone{
         text-decoration: line-through;

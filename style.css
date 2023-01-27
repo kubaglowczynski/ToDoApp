@@ -64,6 +64,9 @@ p {
       border: 3px solid rgba(255, 255, 255, 0);
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px; }
+      @media screen and (max-width: 768px) {
+        .inputvalue input.inputVal {
+          font-size: 15px; } }
   .inputvalue button {
     width: 20%;
     height: 100%;
@@ -83,6 +86,9 @@ p {
   width: 80%;
   display: flex;
   margin: 20px auto; }
+  @media screen and (max-width: 768px) {
+    .todoList {
+      width: 95%; } }
   .todoList p {
     margin: 0;
     padding-left: 3px;
@@ -94,6 +100,9 @@ p {
     background-color: rgba(255, 255, 255, 0.7);
     font-family: 'Comfortaa', cursive;
     text-transform: uppercase; }
+    @media screen and (max-width: 768px) {
+      .todoList p {
+        font-size: 10px; } }
   .todoList .taskDone {
     text-decoration: line-through; }
   .todoList .deleteTask {
