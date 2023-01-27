@@ -45,7 +45,7 @@ p {
   font-family: 'Comfortaa', cursive; }
   @media screen and (max-width: 768px) {
     .container {
-      width: 80%; } }
+      width: 95%; } }
 
 .myTodo {
   width: 90%; }
