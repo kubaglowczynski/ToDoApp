@@ -1,6 +1,25 @@
 const inputVal = document.getElementsByClassName('inputVal')[0];
 const addTaskBtn = document.getElementsByClassName('btn')[0];
 
+window.addEventListener('load', function() {
+   'use strict';
+
+   const p_array = document.getElementsByTagName("p");
+   const count = p_array.length;
+
+   //loop through a list of elements.
+   for (let i = 0; i < count; i++) {
+
+   const p = p_array[i];
+
+   p.addEventListener("click", function() {
+
+   p.classList.toggle("taskDone");
+
+      })
+   }
+});
+
 addTaskBtn.addEventListener('click', function (){
 
 if(inputVal.value.trim()!=0){
@@ -56,22 +75,3 @@ function clearTask(){
 localStorage.clear()
 showItem()
 }
-
-window.addEventListener('load', function() {
-   'use strict';
- 
-   const p_array = document.getElementsByTagName("p");
-   const count = p_array.length;
- 
-   //loop through a list of elements.
-   for (let i = 0; i < count; i++) {
- 
-     const p = p_array[i];
- 
-     p.addEventListener("click", function() {
- 
-   p.classList.toggle("taskDone");
- 
-     })
-   }
- });
