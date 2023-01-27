@@ -94,8 +94,6 @@ p {
     background-color: rgba(255, 255, 255, 0.7);
     font-family: 'Comfortaa', cursive;
     text-transform: uppercase; }
-    .todoList p:hover {
-      text-decoration: line-through; }
   .todoList .taskDone {
     text-decoration: line-through; }
   .todoList .deleteTask {
