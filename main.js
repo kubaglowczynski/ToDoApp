@@ -2,21 +2,36 @@ const inputVal = document.getElementsByClassName('inputVal')[0];
 const addTaskBtn = document.getElementsByClassName('btn')[0];
 
 window.addEventListener('load', function() {
-   'use strict';
+      'use strict';
 
-   const p_array = document.getElementsByTagName("p");
-   const count = p_array.length;
+      const p_array = document.getElementsByTagName("p");
+      const count = p_array.length;
 
-   //loop through a list of elements.
-   for (let i = 0; i < count; i++) {
+      for (let i = 0; i < count; i++) {
 
-   const p = p_array[i];
+      const p = p_array[i];
 
-   p.addEventListener("click", function() {
-
-   p.classList.toggle("taskDone");
-
+      p.addEventListener("click", function() {
+      p.classList.toggle("taskDone");
       })
+   }
+});
+
+inputVal.addEventListener('keypress', function(event){
+   if(event.key === 'Enter'){
+      if(inputVal.value.trim()!=0){
+         let localItems = JSON.parse( localStorage.getItem('localItem'))
+      if(localItems === null){
+         taskList = []
+      }
+      else{
+         taskList = localItems;
+      }
+         taskList.push(inputVal.value)
+         localStorage.setItem('localItem', JSON.stringify(taskList)); 
+      }
+      inputVal.value = '';
+         showItem()
    }
 });
 
