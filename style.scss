@@ -7,14 +7,17 @@ $bg-color-btn-delete-all: #EF3054;
 $border-color: rgb(0,0,0);
 $border-default: 2px solid $border-color;
 $border-input: 3px solid rgba(255,255,255,0);
-
+//main font
+@mixin font {
+    font-family: 'Comfortaa', cursive;
+}
 //main html
 html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    font-family: 'Comfortaa', cursive;
+    @include font;
 }
 //content center
 body, .container, .todoLists{
@@ -28,6 +31,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+
     @media screen and (max-width: 768px){
         background-size: auto;
     }
@@ -35,7 +39,7 @@ body{
 //style for all buttons
 button{
     cursor: pointer;
-    font-family: 'Comfortaa', cursive;
+    @include font;
 }
 .title{
     cursor: default;
@@ -57,7 +61,7 @@ p{
     background-color: $bg-color-content;
     border: $border-default;
     border-radius: 5px;
-    font-family: 'Comfortaa', cursive;
+    @include font;
 
     @media screen and (max-width: 768px){
         width: 95%;
@@ -65,13 +69,13 @@ p{
 }
 .myTodo{
     width: 90%;
+    @include font;
 }
 .inputvalue{
     margin: 20px;
     display: flex;
     height: 35px;
     input{
-        font-family: 'Comfortaa', cursive;
         width: 80%;
         &.inputVal{
             color: black;
@@ -80,6 +84,8 @@ p{
             border: $border-input;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
+            @include font;
+
             @media screen and (max-width: 768px){
                 font-size: 15px;
             }
@@ -106,6 +112,8 @@ p{
     width: 80%;
     display: flex;
     margin: 20px auto;
+    @include font;
+
     @media screen and (max-width: 768px){
         width: 95%;
     }
@@ -118,8 +126,8 @@ p{
         font-size: 15px;
         overflow-wrap: break-word;
         background-color: rgba(255,255,255,0.7);
-        font-family: 'Comfortaa', cursive;
         text-transform: uppercase;
+
         @media screen and (max-width: 768px){
             font-size: 10px;
         }
@@ -137,6 +145,7 @@ p{
         &:hover{
             background-color: rgba($bg-color-btn-delete, 0.8);
         }
+
         @media screen and (max-width: 768px){
             font-size: 7px;
         }
@@ -151,6 +160,7 @@ p{
     width: 50%;
     height: 30px;
     margin: 15px auto;
+
     &:hover{
         background-color: rgba($bg-color-btn-delete-all, 0.8);
     }
