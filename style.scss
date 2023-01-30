@@ -20,7 +20,7 @@ html{
     @include font;
 }
 //content center
-body, .container, .todoLists{
+%center{
     display: flex;
     justify-content: center;
     align-content: center;
@@ -31,6 +31,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    @extend %center;
 
     @media screen and (max-width: 768px){
         background-size: auto;
@@ -41,11 +42,9 @@ button{
     cursor: pointer;
     @include font;
 }
-.title{
-    cursor: default;
-}
-p{
-    cursor: pointer;
+//style for input
+input{
+    @include font;
 }
 .title{
     position: absolute;
@@ -54,6 +53,7 @@ p{
     font-size: 4vw;
     font-weight: 800;
     text-shadow: 2px 2px black;
+    cursor: default;
 }
 .container{
     width: 60%;
@@ -61,7 +61,7 @@ p{
     background-color: $bg-color-content;
     border: $border-default;
     border-radius: 5px;
-    @include font;
+    @extend %center;
 
     @media screen and (max-width: 768px){
         width: 95%;
@@ -69,7 +69,6 @@ p{
 }
 .myTodo{
     width: 90%;
-    @include font;
 }
 .inputvalue{
     margin: 20px;
@@ -84,7 +83,6 @@ p{
             border: $border-input;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
-            @include font;
 
             @media screen and (max-width: 768px){
                 font-size: 15px;
@@ -107,12 +105,12 @@ p{
 .todoLists{
     display: block;
     margin: 20px;
+    @extend %center;
 }
 .todoList{
     width: 80%;
     display: flex;
     margin: 20px auto;
-    @include font;
 
     @media screen and (max-width: 768px){
         width: 95%;
@@ -127,6 +125,7 @@ p{
         overflow-wrap: break-word;
         background-color: rgba(255,255,255,0.7);
         text-transform: uppercase;
+        cursor: pointer;
 
         @media screen and (max-width: 768px){
             font-size: 10px;

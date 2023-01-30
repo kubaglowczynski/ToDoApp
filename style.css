@@ -24,11 +24,8 @@ button {
   cursor: pointer;
   font-family: 'Comfortaa', cursive; }
 
-.title {
-  cursor: default; }
-
-p {
-  cursor: pointer; }
+input {
+  font-family: 'Comfortaa', cursive; }
 
 .title {
   position: absolute;
@@ -36,22 +33,21 @@ p {
   color: #FF6F59;
   font-size: 4vw;
   font-weight: 800;
-  text-shadow: 2px 2px black; }
+  text-shadow: 2px 2px black;
+  cursor: default; }
 
 .container {
   width: 60%;
   margin-top: 20vh;
   background-color: rgba(1, 1, 1, 0.3);
   border: 2px solid black;
-  border-radius: 5px;
-  font-family: 'Comfortaa', cursive; }
+  border-radius: 5px; }
   @media screen and (max-width: 768px) {
     .container {
       width: 95%; } }
 
 .myTodo {
-  width: 90%;
-  font-family: 'Comfortaa', cursive; }
+  width: 90%; }
 
 .inputvalue {
   margin: 20px;
@@ -65,8 +61,7 @@ p {
       font-size: 20px;
       border: 3px solid rgba(255, 255, 255, 0);
       border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      font-family: 'Comfortaa', cursive; }
+      border-bottom-left-radius: 5px; }
       @media screen and (max-width: 768px) {
         .inputvalue input.inputVal {
           font-size: 15px; } }
@@ -88,8 +83,7 @@ p {
 .todoList {
   width: 80%;
   display: flex;
-  margin: 20px auto;
-  font-family: 'Comfortaa', cursive; }
+  margin: 20px auto; }
   @media screen and (max-width: 768px) {
     .todoList {
       width: 95%; } }
@@ -102,7 +96,8 @@ p {
     font-size: 15px;
     overflow-wrap: break-word;
     background-color: rgba(255, 255, 255, 0.7);
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    cursor: pointer; }
     @media screen and (max-width: 768px) {
       .todoList p {
         font-size: 10px; } }
