@@ -36,45 +36,45 @@ inputVal.addEventListener('keypress', function(event){
 });
 
 addTaskBtn.addEventListener('click', function (){
-
-if(inputVal.value.trim()!=0){
-   let localItems = JSON.parse( localStorage.getItem('localItem'))
-if(localItems === null){
-   taskList = []
-}
-else{
-   taskList = localItems;
-}
-   taskList.push(inputVal.value)
-   localStorage.setItem('localItem', JSON.stringify(taskList)); 
-}
-inputVal.value = '';
-   showItem()
+   if(inputVal.value.trim()!=0){
+      let localItems = JSON.parse( localStorage.getItem('localItem'))
+   if(localItems === null){
+      taskList = []
+   }
+   else{
+      taskList = localItems;
+   }
+      taskList.push(inputVal.value)
+      localStorage.setItem('localItem', JSON.stringify(taskList)); 
+   }
+   inputVal.value = '';
+      showItem()
 })
 
 function showItem(){
    let localItems = JSON.parse( localStorage.getItem('localItem'))
+
    if(localItems === null){
    taskList = []
-}
-else{
+   }
+   else{
    taskList = localItems;
-}
+   }
 
 
-let html = '';
-let itemShow = document.querySelector('.todoLists');
-taskList.forEach((data, index )=> {
-   
+   let html = '';
+   let itemShow = document.querySelector('.todoLists');
+   taskList.forEach((data, index )=> {
+      
 
-   html += `
-   <div class="todoList">
-   <p class="pText">${data}</p>
-   <button class="deleteTask" onClick="deleteItem(${index})">Delete</button>
-   </div>
-   `
-})
-itemShow.innerHTML = html;
+      html += `
+      <div class="todoList">
+      <p class="pText">${data}</p>
+      <button class="deleteTask" onClick="deleteItem(${index})">Delete</button>
+      </div>
+      `
+   })
+   itemShow.innerHTML = html;
 }
 showItem()
 
@@ -86,7 +86,6 @@ function deleteItem(index){
 }
 
 function clearTask(){
-   
-localStorage.clear()
-showItem()
+   localStorage.clear()
+   showItem()
 }
