@@ -1,5 +1,6 @@
 const inputVal = document.getElementsByClassName('inputVal')[0];
 const addTaskBtn = document.getElementsByClassName('btn')[0];
+let docTitle = document.title;
 
 window.addEventListener('load', function() {
       'use strict';
@@ -16,6 +17,14 @@ window.addEventListener('load', function() {
       })
    }
 });
+
+window.addEventListener('blur', function(){
+   this.document.title = "Let's do something!"
+})
+
+window.addEventListener('focus', function(){
+   this.document.title = docTitle;
+})
 
 inputVal.addEventListener('keypress', function(event){
    if(event.key === 'Enter'){
