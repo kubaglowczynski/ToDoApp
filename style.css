@@ -3,6 +3,8 @@ html {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
   font-family: "Comfortaa", cursive;
 }
 
